@@ -6,8 +6,9 @@ class UI {
         this.details = document.getElementById('w-details');
         this.icon = document.getElementById('w-icon');
         this.humidity = document.getElementById('w-humidity');
-        this.maxTemp = document.getElementById('w-maxtemp');
-        this.pressure = document.getElementById('w-pressure');
+        this.clouds = document.getElementById('w-clouds');
+        this.description = document.getElementById('w-desciption');
+        this.sunset = document.getElementById('w-sunset');
         this.wind = document.getElementById('w-wind');
     }
 
@@ -18,9 +19,10 @@ class UI {
        
         this.icon.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
         this.humidity.textContent = `Relative Humidity: ${weather.main.humidity} %`;
-        this.maxTemp.textContent = `Maximum Temperature: ${weather.main.temp_max} ℃`;
-        this.pressure.textContent = `Pressure Level: ${weather.main.pressure}`;
         this.wind.textContent = `Wind Speed: ${weather.wind.speed} m/s`;
+        this.clouds.textContent = `Cloudiness: ${weather.clouds.all} %`;
+        this.description.textContent = `: ${weather.description}`;
+
 
     }
 }
